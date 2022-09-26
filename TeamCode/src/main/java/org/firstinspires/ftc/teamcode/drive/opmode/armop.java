@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-
+@TeleOp
 public class armop extends OpMode {
 
     //initilizes everything
@@ -21,7 +21,7 @@ public class armop extends OpMode {
 
 
 
-    @Override
+
     public void init() {
 
         //assign motors
@@ -37,7 +37,7 @@ public class armop extends OpMode {
         left = hardwareMap.get(Servo.class, "s2");
 
         //reverses motors
-        front_left.setDirection(DcMotorSimple.Direction.REVERSE);
+        front_right.setDirection(DcMotorSimple.Direction.REVERSE);
         back_right. setDirection(DcMotorSimple.Direction.REVERSE);
 
     }
@@ -45,10 +45,10 @@ public class armop extends OpMode {
     @Override
     public void loop() {
         boolean estopflag = false; //estop flag
-
+        boolean cancel = gamepad1.right_stick_button;
+        boolean cancel2 = gamepad2.right_stick_button;
 
         //if estop buttens are pressed stop loop
-        while (estopflag == false) {
 
             //fine drive controls for tools op variables to conver boolean to double
             double fstrafe = 0;
@@ -84,10 +84,7 @@ public class armop extends OpMode {
             double estop2 = gamepad2.left_trigger;
 
 
-            // if the analog trigger is pressed, convert to boolean to end loop
-            if (estop > 0.5 || estop2 > 0.5) {
-                estopflag = true;
-            }
+
 
 
             // switches the flag for swtiching between analog and bianary control
@@ -108,21 +105,21 @@ public class armop extends OpMode {
                     } else {
                         close = false;
                     }
+                    if (close) {
+                        right.setPosition(1);
+                        left.setPosition(1);
+                    } else {
+                        right.setPosition(0);
+                        left.setPosition(0);
+                    }
                 }
 
 
-                //grabber bianary control
-                if (close) {
-                    right.setPosition(1);
-                    left.setPosition(1);
-                } else {
-                    right.setPosition(0);
-                    left.setPosition(0);
-                }
+
 
             } else {
                 //grabber analog control
-                right.setPosition(trig);
+                right.setPosition(-trig);
                 left.setPosition(trig);
             }
 
@@ -164,5 +161,10 @@ public class armop extends OpMode {
             back_left.setPower(((power + steering) + strafe) + ((fpower + fsteering) + fstrafe));
             back_right.setPower(((power - steering) - strafe) + ((fpower - fsteering) - fstrafe));
         }
-    }
+
+
+
+
+
+
 }
