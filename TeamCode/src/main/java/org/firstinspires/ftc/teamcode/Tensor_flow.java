@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
+import static org.firstinspires.ftc.robotcore.external.tfod.TfodCurrentGame.TFOD_MODEL_ASSET;
+
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
@@ -10,7 +12,8 @@ import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer;
 import org.firstinspires.ftc.robotcore.external.tfod.Recognition;
 import org.firstinspires.ftc.robotcore.external.tfod.TFObjectDetector;
-import org.firstinspires.ftc.teamcode.drive.opmode.Tensor_math;
+import org.firstinspires.ftc.teamcode.drive.opmode.classes.Tensor_math;
+
 
 import java.util.List;
 
@@ -42,14 +45,14 @@ public class Tensor_flow extends LinearOpMode {
      * has been downloaded to the Robot Controller's SD FLASH memory, it must to be loaded using loadModelFromFile()
      * Here we assume it's an Asset.    Also see method initTfod() below .
      */
-    private static final String TFOD_MODEL_ASSET = "PowerPlay.tflite";
-    // private static final String TFOD_MODEL_FILE  = "/sdcard/FIRST/tflitemodels/CustomTeamModel.tflite";
+    //private static final String TFOD_MODEL_ASSET = "PowerPlay.tflite";
+    private static final String TFOD_MODEL_FILE  = "/sdcard/FIRST/tflitemodels/new_modelt.tflite";
 
 
     private static final String[] LABELS = {
-            "1 Bolt",
-            "2 Bulb",
-            "3 Panel"
+            "1 red",
+            "2 green",
+            "3 blue"
 
     };
 
@@ -115,7 +118,7 @@ public class Tensor_flow extends LinearOpMode {
             // to artificially zoom in to the center of image.  For best results, the "aspectRatio" argument
             // should be set to the value of the images used to create the TensorFlow Object Detection model
             // (typically 16/9).
-            tfod.setZoom(2.0, 4/3);
+            tfod.setZoom(1.0, 4/3);
         }
 
         /** Wait for the game to begin */
@@ -136,7 +139,7 @@ public class Tensor_flow extends LinearOpMode {
                             for (Recognition recognition : updatedRecognitions) {
                                 String label = recognition.getLabel();
 
-                                maths.adding(label);
+                               // maths.adding(label);
 
                             }
 
@@ -153,7 +156,7 @@ public class Tensor_flow extends LinearOpMode {
                 if (stopper == 20000) {
                     telemetry.addData(">", maths.detected());
                     telemetry.update();
-                    maths.find_position();
+                   // maths.find_position();
 
                 }
 
@@ -194,7 +197,7 @@ public class Tensor_flow extends LinearOpMode {
 
         // Use loadModelFromAsset() if the TF Model is built in as an asset by Android Studio
         // Use loadModelFromFile() if you have downloaded a custom team model to the Robot Controller's FLASH.
-        tfod.loadModelFromAsset(TFOD_MODEL_ASSET, LABELS);
-        // tfod.loadModelFromFile(TFOD_MODEL_FILE, LABELS);
+        //tfod.loadModelFromAsset(TFOD_MODEL_ASSET, LABELS);
+         tfod.loadModelFromFile(TFOD_MODEL_FILE, LABELS);
     }
 }

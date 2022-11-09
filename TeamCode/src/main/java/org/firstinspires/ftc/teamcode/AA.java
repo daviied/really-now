@@ -62,13 +62,13 @@ public class AA extends LinearOpMode {
      * Here we assume it's an Asset.    Also see method initTfod() below .
      */
    // private static final String TFOD_MODEL_ASSET = "/sdcard/FIRST/tflitemodels/custom.tflite";
-    private static final String TFOD_MODEL_FILE  = "/sdcard/FIRST/tflitemodels/custom.tflite";
+    private static final String TFOD_MODEL_FILE  = "/sdcard/FIRST/tflitemodels/new_model.tflite";
 
 
     private static final String[] LABELS = {
-            "blue side",
-            "green side",
-            "red side"
+            "1 red",
+            "2 green",
+            "3 blue"
     };
 
     /*

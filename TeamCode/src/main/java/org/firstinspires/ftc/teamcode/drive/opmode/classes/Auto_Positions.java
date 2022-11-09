@@ -4,7 +4,8 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 
-import org.firstinspires.ftc.teamcode.drive.opmode.Robot;
+
+import org.firstinspires.ftc.teamcode.drive.opmode.classes.Robot;
 
 @Autonomous
 public class Auto_Positions extends LinearOpMode {
