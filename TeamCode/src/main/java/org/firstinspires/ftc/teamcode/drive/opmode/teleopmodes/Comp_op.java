@@ -43,8 +43,8 @@ public class Comp_op extends OpMode {
 
     @Override
     public void loop() {
-        double steering = gamepad1.left_stick_y;
-        double speed = gamepad1.right_stick_x;
+        double speed = gamepad1.left_stick_y;
+        double steering = gamepad1.right_stick_x;
         double strafe = gamepad1.left_stick_x;
         boolean pos_1 = gamepad2.a;
         boolean pos_2 = gamepad2.x;
