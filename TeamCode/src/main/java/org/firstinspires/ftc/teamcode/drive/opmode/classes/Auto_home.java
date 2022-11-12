@@ -23,8 +23,8 @@ public class Auto_home extends LinearOpMode {
         x = a;
         y = b;
 
-        fl.setDirection(DcMotor.Direction.REVERSE);
-        bl.setDirection(DcMotor.Direction.REVERSE);
+        //fl.setDirection(DcMotor.Direction.REVERSE);
+      //  bl.setDirection(DcMotor.Direction.REVERSE);
 
 
     }
