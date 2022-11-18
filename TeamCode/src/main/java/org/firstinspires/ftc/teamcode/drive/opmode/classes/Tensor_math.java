@@ -30,18 +30,18 @@ public class Tensor_math extends regular_math{
     public String detected() {
         if (bolt > bulb) {
             if (bolt > panel) {
-                return "1 Bolt";
+                return "1 red";
             } else {
-                return "3 Panel";
+                return "3 blue";
             }
         } else if (bulb > bolt) {
             if (bulb > panel) {
-                return "2 Bulb";
+                return "2 green";
             } else {
-                return "3 Panel";
+                return "3 blue";
             }
         } else if (panel > bulb && panel > bolt) {
-            return "3 Panel";
+            return "3 blue";
         } else {
             return "No objects detected OR no object detected most";
 

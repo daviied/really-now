@@ -4,6 +4,7 @@ import static org.firstinspires.ftc.robotcore.external.tfod.TfodCurrentGame.TFOD
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.Servo;
 
@@ -99,6 +100,7 @@ public class Tensor_flow extends LinearOpMode {
         // The TFObjectDetector uses the camera frames from the VuforiaLocalizer, so we create that
         // first.
         initVuforia();
+
         initTfod();
         Tensor_math maths = new Tensor_math();
         maths.def(front_left, front_right, back_left, back_right);
@@ -130,7 +132,7 @@ public class Tensor_flow extends LinearOpMode {
 
         if (opModeIsActive()) {
             while (opModeIsActive()) {
-              //  if (stopper <= 1500) {
+             //  if (stopper <= 19999) {
                     if (tfod != null) {
                         // getUpdatedRecognitions() will return null if no new information is available since
                         // the last time that call was made.
@@ -139,14 +141,14 @@ public class Tensor_flow extends LinearOpMode {
                             for (Recognition recognition : updatedRecognitions) {
                                 String label = recognition.getLabel();
 
-                               // maths.adding(label);
+                                maths.adding(label);
 
                             }
 
                         }
                     }
                     stopper++;
-                  //}
+                 // }
                 if (stopper == 20000) {
                     telemetry.addData(">", maths);
                     telemetry.update();
@@ -156,7 +158,7 @@ public class Tensor_flow extends LinearOpMode {
                 if (stopper == 20000) {
                     telemetry.addData(">", maths.detected());
                     telemetry.update();
-                   // maths.find_position();
+                   maths.find_position();
 
                 }
 

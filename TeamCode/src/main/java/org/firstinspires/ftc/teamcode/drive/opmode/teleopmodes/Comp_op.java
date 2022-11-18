@@ -83,9 +83,6 @@ public class Comp_op extends OpMode {
 
         if (ho >= 0.5) {
             home.home();
-            home.homeb();
-            a.setPosition(0);
-            b.setPosition(1);
         }
 
         if (pos_1) {
@@ -95,20 +92,20 @@ public class Comp_op extends OpMode {
             // po = enc += 0;
 
         } else if (pos_2) {
-            lift.setTargetPosition(32391+enc);
+            lift.setTargetPosition(2141+enc);
             // po = (enc += 1092);
         } else if (pos_3) {
-            lift.setTargetPosition(50728+enc);
+            lift.setTargetPosition(3324+enc);
             // po = enc += 1869;
         } else if (pos_4) {
-            lift.setTargetPosition(68207 + enc);
+            lift.setTargetPosition(4440 + enc);
             lift.getCurrentPosition();
             //po = enc += 2371;
         }
 
 
         //lift.setTargetPosition(po);
-        lift.setTargetPositionTolerance(9999999);
+        //lift.setTargetPositionTolerance(9999999);
         lift.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         lift.setPower(0.85);
 

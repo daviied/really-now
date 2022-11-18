@@ -14,6 +14,7 @@ public class Auto_home extends LinearOpMode {
     DcMotor br;
     DistanceSensor x;
     DistanceSensor y;
+
     public void define(DcMotor front_left, DcMotor front_right, DcMotor back_left, DcMotor back_right, DistanceSensor a, DistanceSensor b) {
 
         fl = front_left;
@@ -23,6 +24,7 @@ public class Auto_home extends LinearOpMode {
         x = a;
         y = b;
 
+
         //fl.setDirection(DcMotor.Direction.REVERSE);
       //  bl.setDirection(DcMotor.Direction.REVERSE);
 
@@ -30,13 +32,15 @@ public class Auto_home extends LinearOpMode {
     }
 
     public boolean home() {
+        Auto_home homes = new Auto_home();
+        homes.define(fl, fr, bl, br, x, y);
 
 
         while (x.getDistance(DistanceUnit.MM) >= 200) {
 
-            fl.setPower(0.2);
+            fl.setPower(-0.2);
             fr.setPower(-0.2);
-            bl.setPower(0.2);
+            bl.setPower(-0.2);
             br.setPower(-0.2);
 
         }
@@ -45,6 +49,7 @@ public class Auto_home extends LinearOpMode {
         fr.setPower(0);
         bl.setPower(0);
         br.setPower(0);
+        homes.homeb();
 
 
 
@@ -57,9 +62,9 @@ public class Auto_home extends LinearOpMode {
         if (x.getDistance(DistanceUnit.MM) < 140) {
             while (y.getDistance(DistanceUnit.MM) >= 150) {
 
-                fl.setPower(0.2);
+                fl.setPower(-0.2);
                 fr.setPower(0.2);
-                bl.setPower(0.2);
+                bl.setPower(-0.2);
                 br.setPower(0.2);
 
             }
@@ -71,9 +76,9 @@ public class Auto_home extends LinearOpMode {
         } else if (x.getDistance(DistanceUnit.MM) > 140) {
             while (y.getDistance(DistanceUnit.MM) >= 150) {
 
-                fl.setPower(-0.2);
+                fl.setPower(0.2);
                 fr.setPower(-0.2);
-                bl.setPower(-0.2);
+                bl.setPower(0.2);
                 br.setPower(-0.2);
 
             }
