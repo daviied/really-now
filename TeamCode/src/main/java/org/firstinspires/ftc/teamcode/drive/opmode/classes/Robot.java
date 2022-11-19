@@ -121,7 +121,7 @@ public void define(DcMotorEx front_left, DcMotorEx front_right, DcMotorEx back_l
         double b = 0;
         double c = 0;
         double d = 0;
-        int tpi = 43;
+        int tpi = 49;
         int total = tpi * distance;
         int opposite = -(tpi * distance);
         fl.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -158,8 +158,8 @@ public void define(DcMotorEx front_left, DcMotorEx front_right, DcMotorEx back_l
         double b = 0;
         double c = 0;
         double d = 0;
-        int tpi = 43;
-        int total = tpi * distance;
+        int tpi = 49;
+        int total = tpi * distance;,
         int opposite = -(tpi * distance);
         fl.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         fr.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
