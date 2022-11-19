@@ -38,7 +38,7 @@ public class Auto_home extends LinearOpMode {
         count = 0;
 
 
-        while (x.getDistance(DistanceUnit.MM) >= 200 && count <= 5000) {
+        while (x.getDistance(DistanceUnit.MM) >= 200 && count <= 500) {
 
             fl.setPower(-0.2);
             fr.setPower(-0.2);
@@ -65,7 +65,7 @@ public class Auto_home extends LinearOpMode {
 
         count = 0;
         if (x.getDistance(DistanceUnit.MM) < 140) {
-            while (y.getDistance(DistanceUnit.MM) >= 150 && count <= 5000) {
+            while (y.getDistance(DistanceUnit.MM) >= 150 && count <= 500) {
 
                 fl.setPower(-0.2);
                 fr.setPower(0.2);
