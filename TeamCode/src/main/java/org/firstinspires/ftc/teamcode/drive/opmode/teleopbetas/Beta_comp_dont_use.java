@@ -69,7 +69,7 @@ public class Beta_comp_dont_use extends OpMode {
             steering = steering / 1.5;
             strafe = strafe / 1.5;
         }
-
+//comment
 
 if (!flag) {
     front_left.setPower((speed - steering) - strafe);
