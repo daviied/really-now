@@ -56,6 +56,7 @@ public class Comp_op extends OpMode {
         boolean up = gamepad2.dpad_up;
         boolean down = gamepad2.dpad_down;
         double ho = gamepad1.left_trigger;
+        double offset = gamepad2.left_trigger;
 
         if (lift.getCurrentPosition() > enc +1867) {
             speed = speed / 2.5;
@@ -73,11 +74,33 @@ public class Comp_op extends OpMode {
         front_right.setPower((speed + steering) + strafe);
         back_left.setPower((speed - steering) + strafe);
         back_right.setPower((speed + steering) - strafe);
-
-        if (up && enc <= 2400) {
+        if (up && offset > 0.5) {
             enc += 2;
-        } else if (down && enc >= 0) {
+        } else if (down && offset > 0.5){
             enc -= 2;
+        } else if (up){
+            po = po += 2;
+        } else if (down){
+            po = po -+ 2;
+        }
+
+
+        if (pos_1) {
+            po = enc + 0;
+            a.setPosition(1);
+            b.setPosition(0);
+        } else if (pos_2) {
+            po = enc + 2171;
+            a.setPosition(1);
+            b.setPosition(0);
+        } else if (pos_3) {
+            po = enc + 3354;
+            a.setPosition(1);
+            b.setPosition(0);
+        } else if (pos_4) {
+            po = enc + 4470;
+            a.setPosition(1);
+            b.setPosition(0);
         }
 
 
@@ -85,7 +108,7 @@ public class Comp_op extends OpMode {
             home.home();
         }
 
-        if (pos_1) {
+        /*if (pos_1) {
             lift.setTargetPosition(0+enc);
             a.setPosition(1);
             b.setPosition(0);
@@ -101,13 +124,14 @@ public class Comp_op extends OpMode {
             lift.setTargetPosition(4440 + enc);
             lift.getCurrentPosition();
             //po = enc += 2371;
-        }
+        } */
 
 
         //lift.setTargetPosition(po);
         //lift.setTargetPositionTolerance(9999999);
+        lift.setTargetPosition(po);
         lift.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        lift.setPower(0.85);
+        lift.setPower(0.75);
 
 
         if (f) {

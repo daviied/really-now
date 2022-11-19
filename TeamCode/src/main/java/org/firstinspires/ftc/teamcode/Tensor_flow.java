@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode;
 
 import static org.firstinspires.ftc.robotcore.external.tfod.TfodCurrentGame.TFOD_MODEL_ASSET;
 
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -29,7 +30,7 @@ import java.util.List;
  * is explained below.
  */
 
-@TeleOp(name = "Tensor_flow_full", group = "Concept")
+@Autonomous(name = "Tensor_flow_full", group = "Concept")
 
 public class Tensor_flow extends LinearOpMode {
     DcMotorEx front_left;
@@ -158,9 +159,12 @@ public class Tensor_flow extends LinearOpMode {
                 if (stopper == 20000) {
                     telemetry.addData(">", maths.detected());
                     telemetry.update();
+                    telemetry.addData(">", maths);
                    maths.find_position();
 
                 }
+
+
 
 
 

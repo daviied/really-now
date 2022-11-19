@@ -18,11 +18,11 @@ public class Tensor_math extends regular_math{
 
 
     public void adding(String name) {
-        if (name.equals("1 Bolt")) {
+        if (name.equals("1 red")) {
             bolt++;
-        } else if (name.equals("2 Bulb")) {
+        } else if (name.equals("2 green")) {
             bulb++;
-        } else if (name.equals("3 Panel")) {
+        } else if (name.equals("3 blue")) {
             panel++;
         }
     }
