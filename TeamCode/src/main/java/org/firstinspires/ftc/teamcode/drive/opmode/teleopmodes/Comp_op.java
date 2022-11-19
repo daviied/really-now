@@ -124,7 +124,7 @@ public class Comp_op extends OpMode {
             lift.setTargetPosition(4440 + enc);
             lift.getCurrentPosition();
             //po = enc += 2371;
-        } */
+        } a */
 
 
         //lift.setTargetPosition(po);
