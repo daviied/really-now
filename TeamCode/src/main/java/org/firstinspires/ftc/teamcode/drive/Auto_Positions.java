@@ -16,8 +16,8 @@ public class Auto_Positions extends LinearOpMode {
     }
     public void position_1() {
         robot.drive_forward(5);
-        robot.strafe_left(26);
-        //robot.turn_left(20);
+        robot.strafe_left(24);
+        robot.turn_left(20);
         robot.drive_forward(42);
         robot.strafe_right(2);
     }
@@ -25,14 +25,14 @@ public class Auto_Positions extends LinearOpMode {
     public void position_2() {
 
         robot.drive_forward(5);
-        robot.strafe_left(26);
+        robot.strafe_left(24);
         robot.drive_forward(50);
         robot.strafe_right(26);
     }
 
     public void position_3() {
         robot.drive_forward(2);
-        robot.strafe_right(30);
+        robot.strafe_right(28);
         robot.turn_right(20);
         robot.drive_forward(32);
     }
