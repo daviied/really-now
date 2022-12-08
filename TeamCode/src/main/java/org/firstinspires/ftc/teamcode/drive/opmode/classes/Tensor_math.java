@@ -2,7 +2,7 @@ package org.firstinspires.ftc.teamcode.drive.opmode.classes;
 
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 
-import org.firstinspires.ftc.teamcode.drive.Auto_Positions;
+
 
 public class Tensor_math extends regular_math{
 

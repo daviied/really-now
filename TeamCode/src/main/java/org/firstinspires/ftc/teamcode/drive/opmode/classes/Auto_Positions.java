@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.drive;
+package org.firstinspires.ftc.teamcode.drive.opmode.classes;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -31,7 +31,7 @@ public class Auto_Positions extends LinearOpMode {
     }
 
     public void position_3() {
-        robot.drive_forward(2);
+        robot.drive_forward(5);
         robot.strafe_right(28);
         robot.turn_right(20);
         robot.drive_forward(32);

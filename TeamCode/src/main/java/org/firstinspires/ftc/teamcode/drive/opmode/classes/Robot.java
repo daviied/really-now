@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 
 
 
-public class Robot extends LinearOpMode{
+public class Robot extends Auto_classes{
 
 
     //circumference = 11.87374
